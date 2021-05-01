@@ -1,5 +1,9 @@
 ﻿
-
+.page
+{
+	border: 1px solid #E8ECED;
+	border-radius: 5px;
+}
 @font-face { font-family: 'Mhgoz-Icons'; src: url('https://eidr-a7la.github.io/7ekaya/fonts/Mhgoz-Icons.eot'); src: url('https://eidr-a7la.github.io/7ekaya/fonts/Mhgoz-Icons.eot?#iefix') format('embedded-opentype'), url('https://eidr-a7la.github.io/7ekaya/fonts/Mhgoz-Icons.woff') format('woff'), url('https://eidr-a7la.github.io/7ekaya/fonts/Mhgoz-Icons.ttf') format('truetype'), url('https://eidr-a7la.github.io/7ekaya/fonts/Mhgoz-Icons.svg#Mhgoz-Icons') format('svg'); font-weight: normal; font-style: normal; }
 @font-face { direction: rtl; font-family: 'gs'; src: url('https://eidr-a7la.github.io/7ekaya/fonts/ge_ss_two_medium-webfont.ttf'); src: url('https://eidr-a7la.github.io/7ekaya/fonts/ge_ss_two_medium-webfont.eot?#iefix') format('embedded-opentype'), url('https://eidr-a7la.github.io/7ekaya/fonts/ge_ss_two_medium-webfont.woff') format('woff'), url('https://eidr-a7la.github.io/7ekaya/fonts/ge_ss_two_medium-webfont.ttf') format('truetype'), url('https://eidr-a7la.github.io/7ekaya/fonts/ge_ss_two_medium-webfont.svg#GESSTwoMedium') format('svg') \9; font-weight: bold; font-style: normal; }
 @font-face { direction: rtl; font-family: 'mhgoz'; src: url('https://eidr-a7la.github.io/7ekaya/fonts/ge_ss_two_medium.eot'); src: url('https://eidr-a7la.github.io/7ekaya/fonts/ge_ss_two_medium.eot?#iefix') format('embedded-opentypetype'), url('https://eidr-a7la.github.io/7ekaya/fonts/ge_ss_two_medium.woff') format('woff'), url('https://eidr-a7la.github.io/7ekaya/fonts/ge_ss_two_medium.ttf') format('truetype'), url('https://eidr-a7la.github.io/7ekaya/fonts/ge_ss_two_medium.svg#GESSTwoMediumRegular') format('svg'); font-style: normal; }
