@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv='Refresh' content='5; URL=http://www.a7la7ekaya.com/'>
