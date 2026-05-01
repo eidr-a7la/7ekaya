@@ -101,7 +101,6 @@
         #notif_list li#notif-view-all a:hover { color: var(--gold) !important; }
 
         #wrap { padding-top: 20px; width: 100% !important; max-width: 1200px !important; margin: 0 auto !important; box-sizing: border-box; }
-        
 
         #a7la-hidden-forum-elements { display: none !important; position: absolute; left: -9999px; visibility: hidden; }
         #unread_notif { display: none !important; } 
