@@ -174,7 +174,6 @@ $(document).ready(function() {
     }
 });
 
-
 document.addEventListener("DOMContentLoaded", function() {
                 var bdayBox = document.getElementById("a7la-birthday-container");
                 var bdayContent = document.getElementById("a7la-birthday-content");
