@@ -173,3 +173,23 @@ $(document).ready(function() {
         });
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+                var bdayBox = document.getElementById("a7la-birthday-container");
+                var bdayContent = document.getElementById("a7la-birthday-content");
+                var onlineBox = document.getElementById("a7la-online-container");
+                
+                if (bdayBox && bdayContent) {
+                    // التحقق من وجود روابظ <a> (والتي تمثل أسماء الأعضاء أصحاب أعياد الميلاد)
+                    var hasBirthdays = bdayContent.getElementsByTagName("a").length > 0;
+                    
+                    // إذا لم يوجد أي عضو يحتفل بعيد ميلاده
+                    if (!hasBirthdays) {
+                        bdayBox.style.display = "none"; // إخفاء صندوق الميلاد
+                        if(onlineBox) {
+                            onlineBox.style.flex = "100%"; // تمديد صندوق المتواجدين لملء العرض بالكامل
+                        }
+                    }
+                }
+            });
