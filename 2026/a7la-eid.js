@@ -192,3 +192,45 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 }
             });
+
+document.addEventListener("DOMContentLoaded", function() {
+            var slides = document.querySelectorAll('.a7la7ekaya-slide');
+            if(slides.length > 0) {
+                var currentSlide = 0;
+                
+                function showSlide(index) { 
+                    for(var i = 0; i < slides.length; i++){
+                        slides[i].classList.remove('a7la7ekaya-active');
+                    }
+                    slides[index].classList.add('a7la7ekaya-active'); 
+                }
+                
+                function nextSlide() { currentSlide = (currentSlide + 1) % slides.length; showSlide(currentSlide); }
+                function prevSlide() { currentSlide = (currentSlide - 1 + slides.length) % slides.length; showSlide(currentSlide); }
+                
+                // التقليب التلقائي كل 5 ثواني
+                var slideInterval = setInterval(nextSlide, 5000);
+                
+                var nxtBtn = document.querySelector('.a7la7ekaya-next-btn');
+                var prvBtn = document.querySelector('.a7la7ekaya-prev-btn');
+                
+                if(nxtBtn) {
+                    nxtBtn.addEventListener('click', function(e) {
+                        e.preventDefault(); // منع قفز الصفحة (#)
+                        nextSlide();
+                        // إعادة ضبط المؤقت حتى لا يقلب تلقائياً فجأة أثناء ضغطك
+                        clearInterval(slideInterval);
+                        slideInterval = setInterval(nextSlide, 5000);
+                    });
+                }
+                
+                if(prvBtn) {
+                    prvBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        prevSlide();
+                        clearInterval(slideInterval);
+                        slideInterval = setInterval(nextSlide, 5000);
+                    });
+                }
+            }
+        });
