@@ -16,7 +16,6 @@
         a { text-decoration: none !important; color: inherit; }
         ul { list-style: none !important; padding:0 !important; margin:0 !important;}
         
-
         header, #logo-link, #search-main, #header-navigation, #header-banner { display: none !important; }
 
         .a7la7ekaya-eid-decorations { position: absolute; top: 0; left: 0; width: 100%; height: 25px; z-index: 1000; background-image: linear-gradient(45deg, var(--gold) 25%, transparent 25%, transparent 75%, var(--gold) 75%, var(--gold)), linear-gradient(45deg, var(--gold) 25%, transparent 25%, transparent 75%, var(--gold) 75%, var(--gold)); background-size: 40px 40px; background-position: 0 0, 20px 20px; opacity: 0.9; clip-path: polygon(0 0, 100% 0, 100% 10px, 0 10px); }
