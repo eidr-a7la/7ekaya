@@ -1,3 +1,121 @@
+.a7la-servimg-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(13, 59, 46, 0.8); /* لون أخضر داكن شفاف */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+.a7la-servimg-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+#popupServimg.close {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translate(-50%, -50%) scale(0.8) !important;
+}
+
+
+#popupServimg {
+    position: fixed !important;
+    z-index: 999999 !important;
+    width: 90vw !important;
+    max-width: 800px !important;
+    height: 80vh !important;
+    max-height: 500px !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+    border-radius: 20px !important;
+    /* هذا السطر يصنع الخلفية المعتمة بدون الحاجة لجافا سكريبت */
+    box-shadow: 0 0 0 100vmax rgba(13, 59, 46, 0.8), 0 10px 40px rgba(0,0,0,0.5) !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    background: var(--surface) !important;
+    border: 2px solid var(--gold) !important;
+    overflow: hidden !important;
+}
+
+/* تنسيق زر الإغلاق */
+#popupServimg #popupServimgBtnClose {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: absolute !important;
+    z-index: 1502 !important;
+    top: 15px !important;
+    left: 15px !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background: #e74c3c !important;
+    cursor: pointer !important;
+    transition: 0.3s !important;
+    border: 2px solid #fff !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
+}
+
+#popupServimg #popupServimgBtnClose i {
+    color: #fff !important;
+    background: transparent !important;
+    font-size: 24px !important;
+}
+
+#popupServimg #popupServimgBtnClose:hover {
+    background: #c0392b !important;
+    transform: rotate(90deg) scale(1.1) !important;
+}
+
+/* الحاويات الداخلية */
+.popupContainer {
+    position: absolute !important;
+    z-index: 1501 !important;
+    height: 100% !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    padding-top: 0 !important;
+}
+.popupContainerIframe {
+    height: 100% !important;
+    width: 100% !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+}
+
+
+#popupServimg iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 20px !important;
+    /* 
+       استخدام الفلاتر لقلب الألوان:
+       هذا سيجعل الخلفية البيضاء داكنة (تناسب المنتدى)
+       وسيحول الأزرار الزرقاء الافتراضية إلى لون ذهبي/نحاسي جميل!
+    */
+    filter: invert(0.88) hue-rotate(15deg) sepia(0.2) brightness(1.1) contrast(1.1) !important;
+    -webkit-filter: invert(0.88) hue-rotate(15deg) sepia(0.2) brightness(1.1) contrast(1.1) !important;
+}
+
+/* تعديل الفلتر إذا كان المستخدم مفعل "الوضع الداكن" في منتداك */
+[data-theme="dark"] #popupServimg iframe {
+    filter: invert(0.92) hue-rotate(15deg) sepia(0.3) brightness(1) contrast(1.2) !important;
+    -webkit-filter: invert(0.92) hue-rotate(15deg) sepia(0.3) brightness(1) contrast(1.2) !important;
+}
 
 .a7la-latest-widget {
     background: var(--surface) !important; border: 1px solid var(--border) !important;
