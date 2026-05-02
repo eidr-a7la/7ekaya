@@ -103,14 +103,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (now < dhuAlHijjahStart) {
                 targetDate = dhuAlHijjahStart;
-                titleEl.innerText = "باقي على غرة ذي الحجة 1447هـ";
+                titleEl.innerText = "باقي على شهر ذو الحجة 1447هـ";
             } else if (now >= dhuAlHijjahStart && now < dhuAlHijjahEndDay1) {
                 targetDate = now; showTimer = false; isFireworksDay = true;
-                titleEl.innerText = "مبارك غرة ذي الحجة!";
+                titleEl.innerText = "مبارك شهر ذو الحجة!";
                 messageHtml = "🕋 تقبل الله منا ومنكم صالح الأعمال، وبدأت الأيام العشر المباركات.";
             } else {
                 targetDate = now; showTimer = false;
-                titleEl.innerText = "نحن في العشر الأوائل من ذي الحجة";
+                titleEl.innerText = "نحن في العشر الأوائل من ذو الحجة";
                 messageHtml = "أكثروا من التكبير والتهليل والتحميد 🕋";
             }
         } else {
