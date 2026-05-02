@@ -1,0 +1,294 @@
+
+.a7la-latest-widget {
+    background: var(--surface) !important; border: 1px solid var(--border) !important;
+    border-radius: 20px !important; padding: 25px !important; margin: 30px auto !important;
+    max-width: 1200px !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+    position: relative !important; overflow: hidden !important; z-index: 1 !important; direction: rtl !important;
+}
+
+[data-theme="dark"] .a7la-latest-widget, [data-season="hajj"] .a7la-latest-widget {
+    border-color: rgba(212, 175, 55, 0.2) !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+.a7la-latest-widget .box-head { background: none; border: none; padding: 0;}
+.a7la-latest-widget .box-body { background: none; border: none; padding: 0;}
+
+.a7la-latest-bg-pattern { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://www.transparenttextures.com/patterns/arabesque.png'); opacity: 0.03; pointer-events: none; z-index: -1; }
+[data-theme="dark"] .a7la-latest-bg-pattern, [data-season="hajj"] .a7la-latest-bg-pattern { opacity: 0.06; }
+
+.a7la-latest-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border) !important; padding-bottom: 15px !important; margin-bottom: 20px !important; flex-wrap: wrap; gap: 15px; }
+.a7la-latest-header h3 { font-family: 'Aref Ruqaa', serif !important; font-size: 24px !important; color: var(--primary) !important; margin: 0 !important; display: flex !important; align-items: center !important; gap: 10px !important; text-shadow: var(--neon-glow) !important; }
+.a7la-latest-header h3 i { color: var(--gold) !important; }
+[data-theme="dark"] .a7la-latest-header h3, [data-season="hajj"] .a7la-latest-header h3 { color: var(--gold) !important; }
+
+.a7la-latest-viewall { background: rgba(212, 175, 55, 0.1) !important; color: var(--gold) !important; padding: 8px 15px !important; border-radius: 12px !important; font-size: 13px !important; font-weight: bold !important; display: flex !important; align-items: center !important; gap: 8px !important; transition: 0.3s !important; text-decoration: none !important; }
+.a7la-latest-viewall:hover { background: var(--gold) !important; color: #fff !important; transform: translateX(-5px) !important; }
+
+.a7la-latest-list { display: flex; flex-direction: column; gap: 12px; }
+
+.a7la-latest-item { display: flex !important; align-items: center !important; gap: 15px !important; padding: 15px !important; margin-bottom: 12px !important; background: var(--bg) !important; border: 1px solid var(--border) !important; border-radius: 15px !important; transition: all 0.4s ease !important; position: relative !important; overflow: hidden !important; text-decoration: none !important; cursor: pointer !important; width: 100% !important; box-sizing: border-box !important; }
+.a7la-latest-item::before { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 4px; background: var(--gold); border-radius: 0 15px 15px 0; opacity: 0; transition: 0.3s; }
+.a7la-latest-item:hover { transform: translateY(-3px) scale(1.01) !important; border-color: var(--gold) !important; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.15) !important; background: var(--surface) !important; z-index: 2 !important;}
+.a7la-latest-item:hover::before { opacity: 1; }
+
+.a7la-latest-avatar { position: relative; flex-shrink: 0; }
+.a7la-dynamic-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border); padding: 2px; background: var(--surface); transition: 0.4s; }
+.a7la-latest-item:hover .a7la-dynamic-avatar { border-color: var(--gold); transform: rotate(5deg); box-shadow: var(--neon-glow); }
+
+.a7la-latest-details { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+.a7la-latest-title { font-size: 15px; font-weight: bold; color: var(--text-dark); margin-bottom: 5px; transition: 0.3s; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.a7la-latest-item:hover .a7la-latest-title { color: var(--gold); }
+
+.a7la-latest-meta { display: flex; flex-wrap: wrap; gap: 15px; font-size: 12px; color: var(--text-gray); }
+.a7la-latest-meta span { display: flex; align-items: center; gap: 5px; }
+.a7la-latest-meta i { color: var(--primary); font-size: 11px; }
+[data-theme="dark"] .a7la-latest-meta i, [data-season="hajj"] .a7la-latest-meta i { color: var(--gold); }
+.a7la-latest-meta b { color: var(--primary) !important; font-weight: bold !important; transition: 0.3s !important; }
+[data-theme="dark"] .a7la-latest-meta b, [data-season="hajj"] .a7la-latest-meta b { color: var(--gold-light) !important; }
+
+/* تنسيق الإحصائيات */
+.a7la-latest-stats { display: flex; gap: 15px; flex-shrink: 0; background: var(--surface); padding: 10px 15px; border-radius: 12px; border: 1px solid var(--border); transition: 0.3s;}
+[data-theme="dark"] .a7la-latest-stats, [data-season="hajj"] .a7la-latest-stats { background: var(--bg); }
+.a7la-latest-item:hover .a7la-latest-stats { border-color: rgba(212, 175, 55, 0.3); }
+.a7la-latest-stats .stat { display: flex; flex-direction: column; align-items: center; font-size: 13px; font-weight: bold; color: var(--text-dark); }
+.a7la-latest-stats .stat i { color: var(--gold); font-size: 14px; margin-bottom: 3px; }
+
+.a7la-effect-hidden { opacity: 0; transform: translateY(30px); }
+.a7la-effect-visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+    .a7la-latest-item { flex-direction: column !important; align-items: flex-start !important; position: relative !important; }
+    .a7la-latest-avatar { position: absolute !important; top: 15px !important; left: 15px !important; }
+    .a7la-latest-details { padding-left: 60px !important; }
+    .a7la-latest-title { -webkit-line-clamp: 2 !important; }
+    .a7la-latest-meta { gap: 8px !important; flex-direction: column !important; align-items: flex-start !important; }
+    .a7la-latest-stats { width: 100%; justify-content: space-around; margin-top: 10px; box-sizing: border-box;}
+}
+
+form#quick_reply.block-content {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important; /* جعل العناصر بنفس الارتفاع */
+    gap: 20px !important;
+    background: #fdfdfd !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    margin: 20px auto !important;
+    direction: rtl !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    clear: both !important;
+}
+.quick-reply-textarea-wrap {
+    padding: 0px 0px;
+    position: relative;
+    width: 100%;
+}
+i.fa-brands.fa-x-twitter:before {
+    content: "\f099";
+    font-family: "Font Awesome 6 Brands";
+}
+.block.quick-reply {
+    width: 100%;
+}
+
+.quick-reply-textarea-wrap {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 15px !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important; /* سطر مهم جداً لمنع المحرر من الخروج عن الإطار */
+    position: static !important;
+}
+.quick-reply-textarea-wrap .sceditor-container {
+    border: 2px solid #EBEBEB !important;
+    border-radius: 16px 16px 16px 16px !important;
+}
+
+#quick-reply-avatar {
+    flex: 0 0 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    position: static !important; /* إلغاء التموضع القديم */
+    margin: 0 !important;
+}
+#quick-reply-avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+
+.sceditor-container {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    position: static !important;
+    margin: 0 !important;
+}
+.sceditor-container iframe, 
+.sceditor-container textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* --- القسم الأيسر: الأزرار الجانبية --- */
+.quick-reply-side-btns {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    flex: 0 0 140px !important; /* عرض ثابت لقائمة الأزرار */
+    position: static !important; /* إلغاء التموضع المطلق المسبب للتداخل */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* --- تنسيق الأزرار المشترك --- */
+.quick-reply-side-btns input, 
+.quick-reply-side-btns a,
+.quick-reply-upload {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: inherit !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    position: static !important; /* مهم جداً لزر الصور */
+    margin: 0 !important;
+    text-decoration: none !important;
+    height: auto !important;
+    line-height: normal !important;
+}
+
+/* الوان الأزرار */
+.quick-reply-send {
+    background-color: #10b981 !important;
+    color: #fff !important;
+    border: none !important;
+}
+.quick-reply-preview {
+    background-color: #fff !important;
+    color: #4b5563 !important;
+    border: 1px solid #d1d5db !important;
+}
+.quick-reply-upload {
+    background-color: #eff6ff !important;
+    color: #3b82f6 !important;
+    border: 1px solid #bfdbfe !important;
+}
+.quick-reply-upload i {
+    margin-left: 5px !important;
+}
+
+/* --- التجاوب مع الجوال --- */
+@media (max-width: 768px) {
+    form#quick_reply.block-content {
+        flex-direction: column !important;
+    }
+    .quick-reply-side-btns {
+        flex-direction: row !important;
+        flex: 1 1 auto !important;
+        width: 100% !important;
+    }
+}
+
+.v3-quickreply-wrapper input[type="submit"], .v3-quickreply-wrapper input[type="button"] {
+    background: #d4af37 !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 12px 35px !important;
+    border-radius: 12px !important;
+    font-family: 'Cairo', sans-serif !important;
+    font-weight: bold !important;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.v3-quickreply-wrapper input[type="submit"]:hover {
+    background: #0d3b2e !important;
+    color: #d4af34 !important;
+    transform: translateY(-3px);
+    box-shadow: var(--neon-glow);
+}
+
+
+
+/* إخفاء أيقونة الكعبة في الوضع العادي (موسم العيد) */
+.a7la7ekaya-kaaba-icon { display: none; }
+
+/* -- عندما يكون موسم الحج مفعلاً -- */
+[data-season="hajj"] {
+    --primary: #1a1a1a; /* لون أسود كسوة الكعبة */
+    --secondary: #2c2c2c;
+    --gold: #d4af37; /* لون ذهبي حزام الكعبة */
+    --gold-light: #f1c40f;
+    --neon-glow: 0 0 10px rgba(212, 175, 55, 0.4), 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+[data-season="hajj"] .a7la7ekaya-sheep-icon { display: none; }
+[data-season="hajj"] .a7la7ekaya-kaaba-icon { display: inline-block; font-size: 32px; filter: drop-shadow(var(--neon-glow)); transition: 0.4s; }
+/* تخصيص السلايدر لموسم الحج */
+[data-season="hajj"] .a7la7ekaya-slide:nth-child(1) {
+    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.95)), url('https://i.servimg.com/u/f22/17/61/46/25/arabes10.png'), #000;
+}
+[data-season="hajj"] .a7la7ekaya-slide:nth-child(2) {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://i.servimg.com/u/f22/17/61/46/25/arabes10.png'), #1a1a1a;
+}
+
+
+
+#tawaf-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    z-index: 998;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+}
+#tawaf-container.show-tawaf { opacity: 1; }
+
+
+
+
+
+.a7la7ekaya-kaaba-icon { display: none !important; }
+
+
+[data-season="hajj"] {
+    --primary: #1a1a1a !important; 
+    --secondary: #2c2c2c !important;
+    --gold: #d4af37 !important; 
+    --gold-light: #f1c40f !important;
+    --neon-glow: 0 0 10px rgba(212, 175, 55, 0.4), 0 0 20px rgba(212, 175, 55, 0.2) !important;
+}
+
+[data-season="hajj"][data-theme="dark"] {
+    --gold: #f1c40f !important;
+    --neon-glow: 0 0 10px #f1c40f, 0 0 20px #f1c40f, 0 0 40px #d4af37 !important;
+}
+
+[data-season="hajj"] .a7la7ekaya-sheep-icon { display: none !important; }
+[data-season="hajj"] .a7la7ekaya-kaaba-icon { display: inline-block !important; font-size: 30px; filter: drop-shadow(var(--neon-glow)); transition: 0.4s; }
+
+[data-season="hajj"] .a7la7ekaya-slide:nth-child(1) { background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.95)), url('https://i.servimg.com/u/f22/17/61/46/25/arabes11.png'), #000 !important; }
+[data-season="hajj"] .a7la7ekaya-slide:nth-child(2) { background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://i.servimg.com/u/f22/17/61/46/25/arabes11.png'), #1a1a1a !important; }
+
+#tawaf-container { position: fixed; bottom: 80px; right: 20px; width: 120px; height: 120px; border-radius: 50%; z-index: 999; pointer-events: none; opacity: 0; transition: opacity 1s ease-in-out; box-shadow: 0 0 30px rgba(212, 175, 55, 0.1); background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%); }
+#tawaf-container.show-tawaf { opacity: 1; }
