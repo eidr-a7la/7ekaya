@@ -84,3 +84,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const topics = document.querySelectorAll('.a7la-effect-hidden');
+    
+    // مراقب العناصر عند ظهورها (Scroll Animation) يعمل فقط للنمط الثابت
+    if(topics.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('a7la-effect-visible');
+                    }, Array.from(topics).indexOf(entry.target) * 100); 
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        topics.forEach((topic) => {
+            observer.observe(topic);
+        });
+    }
+});
