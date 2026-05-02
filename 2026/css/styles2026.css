@@ -70,7 +70,7 @@ form#quick_reply.block-content {
     flex-wrap: nowrap !important;
     align-items: stretch !important; /* جعل العناصر بنفس الارتفاع */
     gap: 20px !important;
-    background: #fdfdfd !important;
+   /* background: #fdfdfd !important;*/
     border: 1px solid #e5e7eb !important;
     border-radius: 12px !important;
     padding: 20px !important;
