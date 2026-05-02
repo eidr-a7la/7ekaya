@@ -62,9 +62,6 @@
         });
     })();
 
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
     // تواريخ المناسبات (2026)
     const dhuAlHijjahStart = new Date("May 18, 2026 00:00:00").getTime();
@@ -106,15 +103,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (now < dhuAlHijjahStart) {
                 targetDate = dhuAlHijjahStart;
-                titleEl.innerText = "باقي على شهر ذو الحجة 1447هـ";
+                titleEl.innerText = "باقي على غرة ذي الحجة 1447هـ";
             } else if (now >= dhuAlHijjahStart && now < dhuAlHijjahEndDay1) {
                 targetDate = now; showTimer = false; isFireworksDay = true;
-                titleEl.innerText = "مبارك شهر ذو الحجة!";
-                messageHtml = "???? تقبل الله منا ومنكم صالح الأعمال، وبدأت الأيام العشر المباركات.";
+                titleEl.innerText = "مبارك غرة ذي الحجة!";
+                messageHtml = "🕋 تقبل الله منا ومنكم صالح الأعمال، وبدأت الأيام العشر المباركات.";
             } else {
                 targetDate = now; showTimer = false;
                 titleEl.innerText = "نحن في العشر الأوائل من ذي الحجة";
-                messageHtml = "أكثروا من التكبير والتهليل والتحميد ????";
+                messageHtml = "أكثروا من التكبير والتهليل والتحميد 🕋";
             }
         } else {
             // === مسار استايل العيد ===
@@ -127,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } else if (now >= eidStart && now < eidEndDay1) {
                 targetDate = now; showTimer = false; isFireworksDay = true;
                 titleEl.innerText = "حل علينا العيد!";
-                messageHtml = "???? كل عام وأنتم بخير! عيد أضحى مبارك أعاده الله علينا وعليكم باليمن والبركات ????";
+                messageHtml = "🎉 كل عام وأنتم بخير! عيد أضحى مبارك أعاده الله علينا وعليكم باليمن والبركات 🐏";
             } else {
                 targetDate = now; showTimer = false;
                 titleEl.innerText = "انتهى العيد";
@@ -235,54 +232,3 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
-
-document.addEventListener("DOMContentLoaded", function() {
-        /* ----- برمجة نافذة تسجيل الدخول ----- */
-        const loginBtn = document.getElementById('eidr-trigger-login');
-        const loginModal = document.getElementById('eidr-login-modal');
-        const closeLogin = document.getElementById('eidr-close-login');
-
-        if (loginBtn && loginModal) {
-            loginBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                loginModal.classList.add('active');
-            });
-            
-            closeLogin.addEventListener('click', function() {
-                loginModal.classList.remove('active');
-            });
-
-            loginModal.addEventListener('click', function(e) {
-                if (e.target === loginModal) {
-                    loginModal.classList.remove('active');
-                }
-            });
-        }
-
-        /* ----- برمجة نافذة تأكيد تسجيل الخروج ----- */
-        const logoutBtns = document.querySelectorAll('.eidr-trigger-logout');
-        const logoutModal = document.getElementById('eidr-logout-modal');
-        const confirmLogoutBtn = document.getElementById('eidr-confirm-logout');
-        const cancelLogoutBtn = document.getElementById('eidr-cancel-logout');
-
-        if (logoutBtns.length > 0 && logoutModal) {
-            logoutBtns.forEach(function(btn) {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault(); // إيقاف التحويل المباشر
-                    let logoutUrl = this.getAttribute('href'); 
-                    confirmLogoutBtn.setAttribute('href', logoutUrl); // نقل رابط الخروج لزر التأكيد
-                    logoutModal.classList.add('active'); // إظهار النافذة
-                });
-            });
-
-            cancelLogoutBtn.addEventListener('click', function() {
-                logoutModal.classList.remove('active');
-            });
-
-            logoutModal.addEventListener('click', function(e) {
-                if (e.target === logoutModal) {
-                    logoutModal.classList.remove('active');
-                }
-            });
-        }
-    });
