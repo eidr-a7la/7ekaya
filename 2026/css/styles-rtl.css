@@ -1093,7 +1093,7 @@ input:checked + .checkbox-row-check:after { opacity: 1; }
 .quick-reply { clear: both; }
 .quick-reply .block-content { padding: 0; position: relative; margin: 0; }
 .quick-reply .textarea { background-color: var(--bg); border-color: var(--border); border-radius: 3px 16px 16px 3px; border-style: solid; border-width: 2px; display: block; font-size: 13px; min-height: 94px; padding: 9px 57px 9px 16px; resize: vertical; white-space: pre-wrap; width: 100%; }
-.quick-reply-textarea-wrap { padding: 6px 64px; position: relative; width: 100%; }
+.quick-reply-textarea-wrap { /* padding: 6px 64px; */ position: relative; width: 100%; }
 .quick-reply-textarea-wrap .avatar-default { position: absolute; right: 69px; top: 11px; }
 .quick-reply-btn { background-color: transparent; color: var(--text-dark); cursor: pointer; display: block; font-size: 21px; height: 50px; line-height: 50px; position: absolute; text-align: center; width: 64px; }
 .quick-reply-send, .quick-reply-preview { position:relative; display:block; }
