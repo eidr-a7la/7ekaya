@@ -86,23 +86,71 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    const topics = document.querySelectorAll('.a7la-effect-hidden');
     
-    // مراقب العناصر عند ظهورها (Scroll Animation) يعمل فقط للنمط الثابت
-    if(topics.length > 0) {
+    // 1. مؤثرات الظهور التدريجي (Scroll Animation)
+    const topicsAnim = document.querySelectorAll('.a7la-effect-hidden');
+    if(topicsAnim.length > 0) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('a7la-effect-visible');
-                    }, Array.from(topics).indexOf(entry.target) * 100); 
+                    setTimeout(() => { entry.target.classList.add('a7la-effect-visible'); }, Array.from(topicsAnim).indexOf(entry.target) * 100); 
                     observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.1 });
-
-        topics.forEach((topic) => {
-            observer.observe(topic);
-        });
+        topicsAnim.forEach((topic) => observer.observe(topic));
     }
+
+    // 2. السكريبت الذكي لجلب (القسم + الردود والمشاهدات) بدون تحميل الصفحة
+    $.getScript('/topics_anywhere.php?mode=newest&n=30&b=0&l=ar', function() {
+        if(typeof topics_anywhere !== 'undefined') {
+            $('.a7la-hybrid-row').each(function() {
+                var rowLink = $(this).attr('href');
+                // استخراج رقم الموضوع للمطابقة الدقيقة
+                var topicIdMatch = rowLink.match(/\/t(\d+)-/);
+                if(topicIdMatch) {
+                    var tId = topicIdMatch[1];
+                    for(var i=0; i<topics_anywhere.length; i++) {
+                        var ta_url = topics_anywhere[i][2];
+                        if(ta_url.indexOf('/t' + tId + '-') !== -1) {
+                            // حقن اسم القسم
+                            $(this).find('.a7la-dynamic-forum').html('<i class="fa-solid fa-folder-open"></i> ' + topics_anywhere[i][4]);
+                            // حقن عدد الردود والمشاهدات
+                            $(this).find('.a7la-dynamic-stats .stat:eq(0) span').text(topics_anywhere[i][6]);
+                            $(this).find('.a7la-dynamic-stats .stat:eq(1) span').text(topics_anywhere[i][7]);
+                            break;
+                        }
+                    }
+                }
+            });
+        }
+    });
+
+    // 3. السكريبت الذكي لجلب صور الأعضاء (مع نظام تخزين مؤقت Cache لتسريع المنتدى)
+    $('.a7la-dynamic-avatar').each(function() {
+        var imgElement = $(this);
+        var profileUrl = imgElement.attr('data-profile');
+        
+        if(profileUrl && profileUrl.indexOf('/u') !== -1) {
+            var userId = profileUrl.match(/\/u(\d+)/)[1];
+            var cachedAvatar = localStorage.getItem('a7la_avatar_' + userId);
+            
+            if(cachedAvatar) {
+                // إذا كانت الصورة محفوظة مسبقاً، ضعها فوراً
+                imgElement.attr('src', cachedAvatar);
+            } else {
+                // إذا كانت جديدة، اجلبها من الملف الشخصي بصمت واحفظها
+                $.get(profileUrl, function(data) {
+                    // البحث عن الصورة الرمزية في كود الملف الشخصي
+                    var avatarMatch = data.match(/<img[^>]+src="([^">]+)"[^>]*alt="(?:Avatar|avatar|صورة رمزية)"/i);
+                    if(avatarMatch && avatarMatch[1]) {
+                        var finalSrc = avatarMatch[1];
+                        imgElement.attr('src', finalSrc);
+                        localStorage.setItem('a7la_avatar_' + userId, finalSrc); // حفظها لتسريع التحميل مستقبلاً
+                    }
+                });
+            }
+        }
+    });
+
 });
