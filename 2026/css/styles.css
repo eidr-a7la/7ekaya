@@ -323,4 +323,5 @@ i.fa-solid.fa-sheep:before { content: "\f66b"; }
 .a7la7ekaya-card-footer {
     position: relative !important;
     z-index: 1 !important;
+    width: 520px;
 }
