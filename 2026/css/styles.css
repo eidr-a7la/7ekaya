@@ -324,3 +324,12 @@ i.fa-solid.fa-sheep:before { content: "\f66b"; }
     position: relative !important;
     z-index: 1 !important;
 }
+.a7la7ekaya-forum-card {
+    position: relative;
+    z-index: 1; /* الطبقة الافتراضية للبطاقة */
+}
+
+.a7la7ekaya-forum-card:hover,
+.a7la7ekaya-forum-card.has-active-dropdown {
+    z-index: 999999 !important; 
+}
