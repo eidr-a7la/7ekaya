@@ -44,7 +44,16 @@ a {
 	color: var(--text-dark);
 	text-decoration: none;
 }
+:root {
+    --linkprimary: #8ea103;
+}
+.a7la7ekaya2026-section-banner a:hover {
+	color: var(--linkprimary);
+}
 a:hover {
+	color: var(--gold);
+}
+.a7la7ekaya2026-section-banner a:visited {
 	color: var(--gold);
 }
 a:visited {
