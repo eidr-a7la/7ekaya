@@ -48,7 +48,7 @@ a {
     --linkprimary: #8ea103;
 }
 .a7la7ekaya2026-section-banner a:hover {
-	color: var(--linkprimary);
+	color: var();
 }
 a:hover {
 	color: var(--gold);
