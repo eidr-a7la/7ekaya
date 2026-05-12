@@ -995,7 +995,7 @@ blockquote { background-color: #FFF2B5; border-color: rgba(0, 0, 0, 0.11); borde
 blockquote cite { color: rgba(0, 0, 0, 0.44); display: block; margin-bottom: 3px; }
 blockquote.tiktok-embed { background: none; padding: 0; }
 * + .codebox { margin-top: 11px; }
-.codebox { background-color: #354147; border-color: rgba(0, 0, 0, 0.44); color: #FFFFFF; border-radius: 3px; border-style: solid; border-width: 0 6px 0 0; font-size: 14px; line-height: 1.5; padding: 8px 10px 8px 16px; }
+
 .codebox p { color: rgba(255, 255, 255, 0.44); display: block; margin-bottom: 3px; }
 .codebox p a { float: left; }
 .codebox code { display: block; max-height: 400px; overflow: auto; white-space: nowrap; }
